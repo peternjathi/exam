@@ -1,0 +1,47 @@
+1
+
+awk '/00|03|07/' /home/lubuntu/text.txt > /home/lubuntu/text_selected.txt
+cat /home/lubuntu/text_selected.txt
+
+2
+grep -E '^.[357].*[^,]$' /home/lubuntu/text.txt
+
+3
+sed '/\([0-9]\)\1/d' /home/lubuntu/text.txt
+
+4
+chmod 760 /home/lubuntu/text.txt
+ls -l /home/lubuntu/text.txt
+
+5
+grep -P 'a(?!i).*[0-9]$' /home/lubuntu/text.txt
+
+6
+mkdir /home/lubuntu/FinalTest
+cp /home/lubuntu/text.txt /home/lubuntu/FinalTest/
+mv /home/lubuntu/FinalTest/text.txt /home/lubuntu/FinalTest/mypoem.txt
+ls -l /home/lubuntu/FinalTest/
+
+7
+mkdir -p /home/lubuntu/FinalTest/data/{images,important} /home/lubuntu/FinalTest/old_files
+
+8
+cp -r /home/lubuntu/FinalTest/data/images /home/lubuntu/FinalTest/old_files/
+ls -R /home/lubuntu/FinalTest/old_files/
+
+9
+man date | cat > /home/lubuntu/FinalTest/old_files/date.txt
+
+10 file_info.sh
+#!/bin/bash
+# Script to prompt for a file path and display its properties on a single line.
+
+read -p "Enter a File (including path): " filepath
+
+# Use ls -ld to get the long listing of the file/directory itself.
+# Store the output in a variable.
+output=$(ls -ld "$filepath")
+
+# Print the required prefix and the output.
+# This results in the properties being displayed on a single line.
+echo "Properties: $output"
