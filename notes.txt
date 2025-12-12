@@ -1,0 +1,9 @@
+00: If I can stop one heart from breaking
+01: I shall not live in vain:
+02: If I can ease one life the aching,
+03: Or cool one pain,
+04: Or help one fainting robin
+05: Unto his nest again,
+06: I shall not live in vain.
+07: - Emily Dickinson - December 10, 1830 - May 15, 1886
+830 - May 15, 1886" >> /home/lubuntu/text.txt
