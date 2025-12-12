@@ -1,0 +1,45 @@
+1
+
+awk '/00|03|07/' /home/piyushr/text.txt > /home/piyushr/text_selected.txt
+cat /home/piyushr/text_selected.txt
+
+2
+grep -E '^.[357].*[^,]$' /home/piyushr/text.txt
+
+3
+sed '/\([0-9]\)\1/d' /home/piyushr/text.txt
+
+4
+chmod 760 /home/piyushr/text.txt
+ls -l /home/piyushr/text.txt
+
+5
+grep -P 'a(?!i).*[0-9]$' /home/piyushr/text.txt
+
+6
+mkdir /home/piyushr/FinalTest
+cp /home/piyushr/text.txt /home/piyushr/FinalTest/
+mv /home/piyushr/FinalTest/text.txt /home/piyushr/FinalTest/mypoem.txt
+
+
+7
+mkdir -p /home/piyushr/FinalTest/data/{images,important} /home/piyushr/FinalTest/old_files
+
+8
+cp -r /home/piyushr/FinalTest/data/images /home/piyushr/FinalTest/old_files/
+
+9
+man date | cat > /home/piyushr/FinalTest/old_files/date.txt
+
+10 file_info.sh
+#!/bin/bash
+read -p "Enter a File (including path): " filepath
+output=$(ls -ld "$filepath")
+echo "Properties: $output"
+
+commands
+echo -e '#!/bin/bash\nread -p "Enter a File (including path): " filepath\noutput=$(ls -ld "$filepath")\necho "Properties: $output"' > /home/piyushr/file_info.sh
+chmod +x /home/piyushr/file_info.sh
+cat /home/piyushr/file_info.sh
+/home/piyushr/file_info.sh
+# When prompted, enter a valid file path like /etc/passwd
